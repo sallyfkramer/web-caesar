@@ -6,7 +6,6 @@ app.config['DEBUG'] = True
 
 form = """
 <!DOCTYPE html>
-
 <html>
     <head>
         <style>
@@ -28,7 +27,7 @@ form = """
     <body>
         <form action="/" method="POST">
             <label>Rotate by:
-                <input name="rot" type="text" />
+                <input name="rot" type="text" value='0' />
             </label>
             <br>
             <label>Text:
@@ -40,7 +39,7 @@ form = """
 """
 @app.route("/")
 def index():
-    return form.format()
+    return form.format('')
 
 @app.route("/", methods=['POST'])
 def encypt():
